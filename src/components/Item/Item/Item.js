@@ -91,12 +91,12 @@ const Item = () => {
                         </div>
                         <button onClick={() => handleAddProduct(item)} style={{ backgroundColor: '#F91944', color: 'white', borderRadius: '30px', height: '40px' }} className="btn btn-danger px-4 mt-3"><ShoppingCartIcon className="mr-2" /> Add</button>
                         <div className="row mt-4">
-                            <img width="200px" className="mx-4" src={`http://localhost:5000/${item.image}`} alt="" />
-                            <img width="200px" className="mx-2" src={`http://localhost:5000/${item.image}`} alt="" />
+                            <img width="200px" className="mx-4" src={`http://localhost:5000/item/${item.image}`} alt="" />
+                            <img width="200px" className="mx-2" src={`http://localhost:5000/item/${item.image}`} alt="" />
                         </div>
                     </div>
                     <div className="col-md-7 text-right">
-                        <img style={{ width: '550px' }} src={`http://localhost:5000/${item.image}`} alt="" />
+                        <img style={{ width: '550px' }} src={`http://localhost:5000/item/${item.image}`} alt="" />
                     </div>
                 </div>
             </div>

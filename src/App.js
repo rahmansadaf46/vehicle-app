@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import AddArea from "./components/Admin/AddArea/AddArea";
+import AddGarage from "./components/Admin/AddGarage/AddGarage";
 import AddItem from "./components/Admin/AddItem/AddItem";
 import AllFood from "./components/Admin/AllFood/AllFood";
 import Customer from "./components/Admin/Customer/Customer";
@@ -57,6 +58,9 @@ function App() {
           </Route>
           <Route path="/admin/addArea">
             <AddArea></AddArea>
+          </Route>
+          <Route path="/admin/addGarage">
+            <AddGarage></AddGarage>
           </Route>
           <Route path="/admin/foodList">
             <AllFood></AllFood>

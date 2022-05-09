@@ -32,7 +32,12 @@ const AdminSidebar = () => {
                     </Link>
                 </li>
                 <br />
-
+                <li>
+                    <Link to="/admin/addGarage" className="">
+                        <span style={{ color: '#E51A4B', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Garage</span>
+                    </Link>
+                </li>
+                <br />
                 <li>
                     <Link to="/admin/foodList" className="">
                         <span style={{ color: '#E51A4B', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faThList} /> Food List</span>
