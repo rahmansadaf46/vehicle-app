@@ -63,7 +63,7 @@ const UpdateAmount = ({ modalIsOpen, closeModal, item }) => {
 
             </div>
 
-            <h4 className="text-center text-danger"><u>Update Amount</u> </h4>
+            <h4 className="text-center text-primary"><u>Update Amount</u> </h4>
 
             <div className="font-weight-bold text-center">Order No: <span style={{ color: 'purple' }}>{item?._id.split("").slice(15, 50)}</span></div>
             <br />
@@ -72,7 +72,7 @@ const UpdateAmount = ({ modalIsOpen, closeModal, item }) => {
                     <div className="form-group col-10 d-flex justify-content-center">
                         <label className="pt-1 " for=""><b>Amount:</b></label>
                         <input type="text" ref={register({ required: true })} defaultValue={item?.finalData?.amount} name="amount" placeholder="Enter Amount" className="form-control ml-3" />
-                        {errors.name && <span className="text-danger">This field is required</span>}
+                        {errors.name && <span className="text-primary">This field is required</span>}
                         <span className="pt-1  ml-3 font-weight-bold">$</span>
                     </div>
 

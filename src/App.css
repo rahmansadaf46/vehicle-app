@@ -9,13 +9,14 @@
   padding: 20px;
   transition: right 0.8s;
 }
+
 .exit__cart__icon {
   position: absolute;
   top: 5px;
   left: 5px;
   cursor: pointer;
   font-size: 20px;
-  color: red;
+  color: #007BFF;
   background: #fff;
   padding: 5px;
   border-radius: 50%;

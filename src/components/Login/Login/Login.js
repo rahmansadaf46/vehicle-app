@@ -3,7 +3,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import logo from '../../../fakeData/images/logo2.png';
 import './Login.css';
 import { Button, Form } from 'react-bootstrap';
-import {  initializeLoginFramework, signInWithEmailAndPassword } from '../firebase/loginManager';
+import { initializeLoginFramework, signInWithEmailAndPassword } from '../firebase/loginManager';
 import { UserContext } from '../../../App';
 
 const Login = () => {
@@ -113,7 +113,7 @@ const Login = () => {
                 <div className="mt-5  d-flex justify-content-center">
 
                     <Form onSubmit={handleSubmit} style={{ width: '450px' }}>
-                        <p style={{ fontSize: '20px', color: '#E51A4B' }} ><b>{msg}</b></p>
+                        <p style={{ fontSize: '20px', color: '#59C8D9' }} ><b>{msg}</b></p>
                         <Form.Group className="mt-4" controlId="formBasicEmail">
                             <Form.Control onBlur={blur} onChange={handleChange} style={{ height: "60px", background: '#F5F5F5' }} name="email" type="email" placeholder="Email" />
                         </Form.Group>
@@ -127,7 +127,7 @@ const Login = () => {
                             Sign in</Button>
                         <br />
                         <br />
-                        <Link to="/signup" style={{ color: '#E51A4B' }}>Create an Account</Link>
+                        <Link to="/signup" style={{ color: '#59C8D9' }}>Create an Account</Link>
                     </Form>
 
                 </div>

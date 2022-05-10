@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../../fakeData/images/logo2.png';
 
-const AdminHeader = () => {
+const GarageHeader = () => {
     // const [loggedInUser] = useContext(UserContext);
     return (
         <section style={{ height: '70px' }} className='row'>
@@ -13,7 +13,7 @@ const AdminHeader = () => {
                 </Link>
             </div>
             <div className="col-md-10 d-flex justify-content-end pr-5 pt-4">
-                <h5 style={{ color: '#59C8D9' }}><b>Admin</b></h5>&nbsp;&nbsp;<h5 ><b>Dashboard</b></h5>
+                <h5 style={{ color: '#59C8D9' }}><b>Garage</b></h5>&nbsp;&nbsp;<h5 ><b>Dashboard</b></h5>
             </div>
             {/* <div className="col-md-2 mt-2">
                 <div style={{ margin: '20px 10px 0px 100px', color: 'black' }}>
@@ -24,4 +24,4 @@ const AdminHeader = () => {
     );
 };
 
-export default AdminHeader;
+export default GarageHeader;

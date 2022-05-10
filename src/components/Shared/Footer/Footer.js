@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className="col-md-6"> <img style={{ width: '200px' }} src={logo2} alt="" /></div>
                     <div className=" col-md-3">
                         <ul>
-                            <li className="mb-2"><Link className="text-white ">About Online food</Link></li>
+                            <li className="mb-2"><Link className="text-white ">About Online item</Link></li>
                             <li className="mb-2"><Link className="text-white">Read our blog</Link></li>
                             <li className="mb-2"><Link className="text-white">Sign up to deliver</Link></li>
                             <li className="mb-2"><Link className="text-white">Add your restaurant</Link></li>

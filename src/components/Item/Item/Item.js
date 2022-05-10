@@ -89,7 +89,7 @@ const Item = () => {
                                 </div>
                             </span>
                         </div>
-                        <button onClick={() => handleAddProduct(item)} style={{ backgroundColor: '#F91944', color: 'white', borderRadius: '30px', height: '40px' }} className="btn btn-danger px-4 mt-3"><ShoppingCartIcon className="mr-2" /> Add</button>
+                        <button onClick={() => handleAddProduct(item)} style={{ backgroundColor: '#59C8D9', color: 'white', borderRadius: '30px', height: '40px' }} className="btn  px-4 mt-3"><ShoppingCartIcon className="mr-2" /> Add</button>
                         <div className="row mt-4">
                             <img width="200px" className="mx-4" src={`http://localhost:5000/item/${item.image}`} alt="" />
                             <img width="200px" className="mx-2" src={`http://localhost:5000/item/${item.image}`} alt="" />

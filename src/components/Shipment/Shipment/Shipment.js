@@ -64,7 +64,7 @@ const Shipment = () => {
                                 </div>
 
                                 <div className="text-center pb-3">
-                                    <button style={{ padding: '10px 110px' }} className="btn btn-danger mt-3">Contact</button>
+                                    <button style={{ padding: '10px 110px' }} className="btn  mt-3">Contact</button>
                                 </div>
                             </div>
 

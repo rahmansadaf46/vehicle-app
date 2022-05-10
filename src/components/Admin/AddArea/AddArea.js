@@ -51,21 +51,21 @@ const AddArea = () => {
                 <div className="col-md-2">
                     <AdminSidebar />
                 </div>
-                <div style={{ backgroundColor: '#FFF0F0', height: '100vh' }} className="col-md-10 pt-4">
-                    <div className="text-center  text-danger">
+                <div style={{ backgroundColor: '#B3E1E4', height: '100vh' }} className="col-md-10 pt-4">
+                    <div className="text-center  text-primary">
                         <h2><u>Add an Area</u></h2>
                     </div>
                     <div className="col-md-12">
                         <div><form className="p-3 container col-6" onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-group text-danger text-center">
+                            <div className="form-group text-primary text-center">
                                 <label for=""><b>Enter Area Name</b></label>
-                                <input style={{ borderRadius: '15px', border: '2px solid #DC3545' }} type="text" ref={register({ required: true })} name="title" placeholder="Enter Area Name" className="form-control" />
-                                {errors.name && <span className="text-danger">This field is required</span>}
+                                <input style={{ borderRadius: '15px', border: '2px solid #007BFF' }} type="text" ref={register({ required: true })} name="title" placeholder="Enter Area Name" className="form-control" />
+                                {errors.name && <span className="text-primary">This field is required</span>}
                             </div>
 
                             <div className="form-group row">
                                 <div className="form-group col-md-12 mt-4 pt-1 d-flex justify-content-center">
-                                    <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn text-white btn-danger font-weight-bold">Submit</button>
+                                    <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn text-white  font-weight-bold">Submit</button>
                                 </div>
                             </div>
 

@@ -8,11 +8,11 @@ import './App.css';
 import AddArea from "./components/Admin/AddArea/AddArea";
 import AddGarage from "./components/Admin/AddGarage/AddGarage";
 import AddItem from "./components/Admin/AddItem/AddItem";
-import AllFood from "./components/Admin/AllFood/AllFood";
 import Customer from "./components/Admin/Customer/Customer";
 import DeliveryOrder from "./components/Admin/DeliveryOrder/DeliveryOrder";
 import PendingOrder from "./components/Admin/PendingOrder/PendingOrder";
 import Checkout from "./components/Checkout/Checkout/Checkout";
+import PendingRequest from "./components/GarageUser/PendingRequest/PendingRequest";
 import Home from "./components/Home/Home/Home";
 import Item from "./components/Item/Item/Item";
 import Login from "./components/Login/Login/Login";
@@ -62,11 +62,11 @@ function App() {
           <Route path="/admin/addGarage">
             <AddGarage></AddGarage>
           </Route>
-          <Route path="/admin/foodList">
-            <AllFood></AllFood>
-          </Route>
           <Route path="/admin/customer">
             <Customer></Customer>
+          </Route>
+          <Route path="/garage/pending">
+            <PendingRequest></PendingRequest>
           </Route>
           <Route path="/">
             <Home></Home>

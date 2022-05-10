@@ -77,9 +77,9 @@ const PendingOrder = () => {
                 </div>
 
                 {
-                    product.length === 0 ? <div style={{ backgroundColor: '#FFF0F0', height: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center"><h2 className="text-danger">Loading...</h2></div> : <div style={{ backgroundColor: '#FFF0F0', height: '100%', minHeight: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center">
+                    product.length === 0 ? <div style={{ backgroundColor: '#B3E1E4', height: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center"><h2 className="text-primary">Loading...</h2></div> : <div style={{ backgroundColor: '#B3E1E4', height: '100%', minHeight: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center">
                         <div className="">
-                            <div className="text-center pb-3 text-danger">
+                            <div className="text-center pb-3 text-primary">
                                 <h2><u>Pending Order</u></h2>
                             </div>
                             <div>{
@@ -87,11 +87,11 @@ const PendingOrder = () => {
 
                                     <div className="font-weight-bold">Order No: <span style={{ color: 'purple' }}>{fd._id.split("").slice(15, 50)}</span></div>
                                     <br />
-                                    {fd.finalData.cart.map(item => <p style={{ fontSize: '18px' }}><span className="font-weight-bold text-danger">{item.title}</span> <span className="font-weight-bold text-dark">: {item.quantity}pcs</span></p>)} <br />
+                                    {fd.finalData.cart.map(item => <p style={{ fontSize: '18px' }}><span className="font-weight-bold text-primary">{item.title}</span> <span className="font-weight-bold text-dark">: {item.quantity}pcs</span></p>)} <br />
                                     <p style={{ fontSize: '18px' }}><span className="font-weight-bold text-primary">Payment ID: </span><span className="font-weight-bold text-dark">{fd.finalData.paymentData}</span> </p>
                                     <br />
-                                    <div style={{ border: '2px solid red', padding: '15px' }}>
-                                        <p className="font-weight-bold ">Address: <span className="text-danger">Flat No {fd.finalData.address.flatNo}, House No {fd.finalData.address.houseNo}, {fd.finalData.address.area}</span></p>
+                                    <div style={{ border: '2px solid #007BFF', padding: '15px' }}>
+                                        <p className="font-weight-bold ">Address: <span className="text-primary">Flat No {fd.finalData.address.flatNo}, House No {fd.finalData.address.houseNo}, {fd.finalData.address.area}</span></p>
                                         <p className="font-weight-bold">Contact: <span className="text-primary">{fd.finalData.address.contactNo}</span></p>
                                         <p className="font-weight-bold text-dark">Email: <span className="text-primary">{fd.finalData.email}</span></p>
                                     </div>
@@ -99,7 +99,7 @@ const PendingOrder = () => {
                                     <div className="row">
                                         <div className="d-flex col-md-6">
                                             <div className="">
-                                                <p className="mt-2 font-weight-bold">Status: <span className="text-danger">{fd.finalData.status}</span> </p></div>
+                                                <p className="mt-2 font-weight-bold">Status: <span className="text-primary">{fd.finalData.status}</span> </p></div>
                                             <div style={{ position: 'relative', left: '10px', top: '7px' }} >
                                                 <label class="switch">
                                                     <input onChange={() => handleChange(fd)} type="checkbox" />
@@ -108,7 +108,7 @@ const PendingOrder = () => {
                                             </div>
                                         </div>
                                         <div className="col-md-6 d-flex justify-content-end">
-                                            <p className="mt-2 font-weight-bold">Amount: <span className="text-danger">{fd.finalData.amount}$</span></p>&nbsp;&nbsp; <button onClick={() => openModal(fd)} style={{ padding: '0px 10px' }} className="btn btn-warning font-weight-bold">Edit Amount</button>
+                                            <p className="mt-2 font-weight-bold">Amount: <span className="text-primary">{fd.finalData.amount}$</span></p>&nbsp;&nbsp; <button onClick={() => openModal(fd)} style={{ padding: '0px 10px' }} className="btn btn-warning font-weight-bold">Edit Amount</button>
                                             <UpdateAmount modalIsOpen={modalIsOpen} item={item} closeModal={closeModal}></UpdateAmount>
                                         </div>
                                     </div>

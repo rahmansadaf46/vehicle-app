@@ -1,4 +1,4 @@
-import { faPlus, faCookieBite, faThList, faCheckCircle, faUserFriends } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faCookieBite, faCheckCircle, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -10,44 +10,37 @@ const AdminSidebar = () => {
             <ul className="list-unstyled py-3">
                 <li>
                     <Link to="/admin/pending" className="">
-                        <span style={{ color: '#E51A4B', fontWeight: 'bold' }}><FontAwesomeIcon icon={faCookieBite} /> Pending Order</span>
+                        <span style={{ color: '#59C8D9', fontWeight: 'bold' }}><FontAwesomeIcon icon={faCookieBite} /> Pending Order</span>
                     </Link>
                 </li>
                 <br />
                 <li>
                     <Link to="/admin/delivery" className="">
-                        <span style={{ color: '#E51A4B', fontWeight: 'bold' }}><FontAwesomeIcon icon={faCheckCircle} /> Delivery Order</span>
+                        <span style={{ color: '#59C8D9', fontWeight: 'bold' }}><FontAwesomeIcon icon={faCheckCircle} /> Delivery Order</span>
                     </Link>
                 </li>
                 <br />
                 <li>
                     <Link to="/admin/addItem" className="">
-                        <span style={{ color: '#E51A4B', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Item</span>
+                        <span style={{ color: '#59C8D9', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Item</span>
                     </Link>
                 </li>
                 <br />
                 <li>
                     <Link to="/admin/addArea" className="">
-                        <span style={{ color: '#E51A4B', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Area</span>
+                        <span style={{ color: '#59C8D9', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Area</span>
                     </Link>
                 </li>
                 <br />
                 <li>
                     <Link to="/admin/addGarage" className="">
-                        <span style={{ color: '#E51A4B', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Garage</span>
+                        <span style={{ color: '#59C8D9', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Garage</span>
                     </Link>
                 </li>
                 <br />
-                <li>
-                    <Link to="/admin/foodList" className="">
-                        <span style={{ color: '#E51A4B', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faThList} /> Food List</span>
-                    </Link>
-                </li>
-                <br />
-
                 <li>
                     <Link to="/admin/customer" className="">
-                        <span style={{ color: '#E51A4B', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faUserFriends} /> Customers</span>
+                        <span style={{ color: '#59C8D9', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faUserFriends} /> Customers</span>
                     </Link>
                 </li>
 

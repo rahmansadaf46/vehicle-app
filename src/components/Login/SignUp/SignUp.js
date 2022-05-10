@@ -235,11 +235,11 @@ const SignUp = () => {
                 </Link>
                 <div className="mt-5 d-flex justify-content-center">
                     <Form onSubmit={handleSubmit} style={{ width: '450px' }}>
-                        {errors.name.length > 0 && <p style={{ fontSize: '20px', color: '#E51A4B' }} ><b>{errors.name}</b></p>}
-                        {errors.email.length > 0 && <p style={{ fontSize: '20px', color: '#E51A4B' }} ><b>{errors.email}</b></p>}
-                        {errors.password.length > 0 && <p style={{ fontSize: '20px', color: '#E51A4B' }} ><b>{errors.password}</b></p>}
-                        {errors.confirmPassword.length > 0 && <p style={{ fontSize: '20px', color: '#E51A4B' }} ><b>{errors.confirmPassword}</b></p>}
-                        <p style={{ fontSize: '20px', color: '#E51A4B' }} ><b>{msg}</b></p>
+                        {errors.name.length > 0 && <p style={{ fontSize: '20px', color: '#59C8D9' }} ><b>{errors.name}</b></p>}
+                        {errors.email.length > 0 && <p style={{ fontSize: '20px', color: '#59C8D9' }} ><b>{errors.email}</b></p>}
+                        {errors.password.length > 0 && <p style={{ fontSize: '20px', color: '#59C8D9' }} ><b>{errors.password}</b></p>}
+                        {errors.confirmPassword.length > 0 && <p style={{ fontSize: '20px', color: '#59C8D9' }} ><b>{errors.confirmPassword}</b></p>}
+                        <p style={{ fontSize: '20px', color: '#59C8D9' }} ><b>{msg}</b></p>
                         <Form.Group controlId="formBasicName">
                             <Form.Control required onBlur={handleFormValidation} name="name" style={{ height: "60px", background: '#F5F5F5' }} type="name" placeholder="Name" />
                         </Form.Group>
@@ -258,7 +258,7 @@ const SignUp = () => {
                             Sign up</Button>
                         <br />
                         <br />
-                        <Link to="/login" style={{ color: '#E51A4B' }}>Already have an Account</Link>
+                        <Link to="/login" style={{ color: '#59C8D9' }}>Already have an Account</Link>
                     </Form>
                 </div>
             </div>

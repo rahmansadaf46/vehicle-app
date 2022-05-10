@@ -2,7 +2,7 @@
 textarea {
   border: 1px solid #eeeeee;
   box-sizing: border-box;
-  border-radius:20px;
+  border-radius: 20px;
   margin: 0;
   outline: none;
   padding: 10px;
@@ -52,12 +52,13 @@ input::-webkit-inner-spin-button {
   resize: vertical;
 }
 
-.button-plus:hover{
-    color: #F91944;
+.button-plus:hover {
+  color: #59C8D9;
   /* left: -13px; */
 }
-.button-minus:hover{
-    color: #F91944;
+
+.button-minus:hover {
+  color: #59C8D9;
   /* left: -13px; */
 }
 

@@ -59,28 +59,28 @@ const AddItem = () => {
                 <div className="col-md-2">
                     <AdminSidebar />
                 </div>
-                <div style={{ backgroundColor: '#FFF0F0', height: '100vh' }} className="col-md-10 pt-4">
-                    <div className="text-center  text-danger">
+                <div style={{ backgroundColor: '#B3E1E4', height: '100vh' }} className="col-md-10 pt-4">
+                    <div className="text-center  text-primary">
                         <h2><u>Add a Item</u></h2>
                     </div>
                     <div className="col-md-12">
                         <div><form className="p-3 container col-6" onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-group text-danger text-center">
+                            <div className="form-group text-primary text-center">
                                 <label for=""><b>Enter Title</b></label>
-                                <input style={{ borderRadius: '15px', border: '2px solid #DC3545' }} type="text" ref={register({ required: true })} name="title" placeholder="Enter Item Name" className="form-control" />
-                                {errors.name && <span className="text-danger">This field is required</span>}
+                                <input style={{ borderRadius: '15px', border: '2px solid #007BFF' }} type="text" ref={register({ required: true })} name="title" placeholder="Enter Item Name" className="form-control" />
+                                {errors.name && <span className="text-primary">This field is required</span>}
                             </div>
                             <div className="form-group row mb-1">
-                                <div className="form-group col-12 text-danger text-center">
+                                <div className="form-group col-12 text-primary text-center">
                                     <label for=""><b>Enter Price</b></label>
-                                    <input step="any" style={{ borderRadius: '15px', border: '2px solid #DC3545' }} type="number" ref={register({ required: true })} name="price" placeholder="Price" className="form-control" />
-                                    {errors.roll && <span className="text-danger">This field is required</span>}
+                                    <input step="any" style={{ borderRadius: '15px', border: '2px solid #007BFF' }} type="number" ref={register({ required: true })} name="price" placeholder="Price" className="form-control" />
+                                    {errors.roll && <span className="text-primary">This field is required</span>}
                                 </div>
-                                {/* <div className="col-md-6 text-danger text-center">
+                                {/* <div className="col-md-6 text-primary text-center">
                                     <label for=""><b>Select Category</b></label>
 
                                     <select
-                                        style={{ borderRadius: '15px', border: '2px solid #DC3545' }}
+                                        style={{ borderRadius: '15px', border: '2px solid #007BFF' }}
                                         onChange={(event) => changeCategory(event.target.value)}
                                         className="form-control">
                                         <option disabled={true} value="Not set">Select</option>
@@ -90,34 +90,34 @@ const AddItem = () => {
 
 
                                     </select>
-                                    {errors.age && <span className="text-danger">This field is required</span>}
+                                    {errors.age && <span className="text-primary">This field is required</span>}
 
                                 </div> */}
                             </div>
                             <div className="row">
-                                <div className="form-group col-md-12 text-danger text-center">
+                                <div className="form-group col-md-12 text-primary text-center">
                                     <label for=""><b>Enter Description</b></label>
-                                    <textarea style={{ height: "90px", borderRadius: '20px', border: '2px solid #DC3545' }} type="text" ref={register({ required: true })} name="description" placeholder="Description" className="form-control" />
-                                    {errors.email && <span className="text-danger">This field is required</span>}
+                                    <textarea style={{ height: "90px", borderRadius: '20px', border: '2px solid #007BFF' }} type="text" ref={register({ required: true })} name="description" placeholder="Description" className="form-control" />
+                                    {errors.email && <span className="text-primary">This field is required</span>}
                                 </div>
 
                             </div>
                             <div className="form-group row">
-                                <div className="form-group col-md-6 text-danger text-center">
+                                <div className="form-group col-md-6 text-primary text-center">
                                     <label for=""><b>Enter Short Description</b></label>
-                                    <textarea style={{ height: "70px", borderRadius: '20px', border: '2px solid #DC3545' }} type="number" ref={register({ required: true })} name="shortDescription" placeholder="Short Description" className="form-control" />
-                                    {errors.mobile && <span className="text-danger">This field is required</span>}
+                                    <textarea style={{ height: "70px", borderRadius: '20px', border: '2px solid #007BFF' }} type="number" ref={register({ required: true })} name="shortDescription" placeholder="Short Description" className="form-control" />
+                                    {errors.mobile && <span className="text-primary">This field is required</span>}
                                 </div>
 
-                                <div className="col-6 text-danger">
+                                <div className="col-6 text-primary">
                                     <label for=""><b>Upload Image</b></label>
 
                                     <input ref={register({ required: true })} onChange={handleFileChange} className="form" name="image" type="file" />
-                                    {errors.file && <span className="text-danger">This field is required</span>}
+                                    {errors.file && <span className="text-primary">This field is required</span>}
 
                                 </div>
                                 <div className="form-group col-md-12 mt-4 pt-1 d-flex justify-content-center">
-                                    <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn text-white btn-danger font-weight-bold">Upload</button>
+                                    <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn text-white  font-weight-bold">Upload</button>
                                 </div>
                             </div>
 

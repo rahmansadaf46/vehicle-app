@@ -258,11 +258,11 @@ const Checkout = () => {
                                                         <h4><b>${formatNumber(total)}</b></h4>
                                                     </div>
                                                 </div>
-                                                <input onClick={handlePlaceOrder} type="submit" style={{ padding: '10px 132px' }} placeholder="Place Order" className="btn btn-danger my-4" />
+                                                <input onClick={handlePlaceOrder} type="submit" style={{ padding: '10px 132px', backgroundColor: '#59C8D9', }} placeholder="Place Order" className="btn text-white font-weight-bold my-4" />
                                             </div>
                                         </div>
                                         : <div className="d-flex justify-content-center">
-                                            <h3 className="text-danger mt-5  p-4">Cart is Empty</h3>
+                                            <h3 className="text-primary mt-5  p-4">Cart is Empty</h3>
                                         </div>
                                 }
                             </div>

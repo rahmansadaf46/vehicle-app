@@ -22,7 +22,7 @@ const Menu = () => {
         // const items = fakeData.slice(0, 6);
         // setItem(items);
     }, []);
-    console.log(allItem)
+    // console.log(allItem)
     const itemData = localStorage.getItem('item')
     useEffect(() => {
         const savedCart = getDatabaseCart();
@@ -30,9 +30,9 @@ const Menu = () => {
         const productKeys = Object.keys(savedCart);
         const previousCart = productKeys.map(existingKey => {
             const product = JSON.parse(localStorage.getItem('item')).find(pd => pd._id === existingKey);
-            console.log(existingKey, savedCart[existingKey]);
+            // console.log(existingKey, savedCart[existingKey]);
             product.quantity = savedCart[existingKey];
-            console.log(product);
+            // console.log(product);
             return product;
         })
         // setProducts(previousCart);
@@ -74,7 +74,7 @@ const Menu = () => {
 
             {
                 cart.length > 0 ? <div className="text-center my-4">
-                    <Link to='/checkout' style={{ color: 'white' }} className="btn btn-danger px-5">Checkout Your item</Link>
+                    <Link to='/checkout' style={{ color: 'white' }} className="btn  px-5">Checkout Your item</Link>
                 </div>
                     :
                     <div className="text-center my-4">
