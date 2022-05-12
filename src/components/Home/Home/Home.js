@@ -6,6 +6,7 @@ import About from '../About/About';
 import Menu from '../Menu/Menu';
 import Search from '../Search/Search';
 import { getDatabaseCart } from '../../../utilities/databaseManager';
+import GarageList from '../GarageList/GarageList';
 // import fakeData from '../../../fakeData';
 
 const Home = () => {
@@ -25,6 +26,8 @@ const Home = () => {
         <div>
             <Header cart={cart.length}></Header>
             <Search></Search>
+            <GarageList></GarageList>
+
             <Menu></Menu>
             <About></About>
             <Footer></Footer>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 // import { UserContext } from '../../../App';
-import logo from '../../../fakeData/images/logo2.png';
+import logo from '../../../fakeData/images/logo.png';
 
 
 import { createUserWithEmailAndPassword, initializeLoginFramework } from '../firebase/loginManager';
@@ -254,11 +254,11 @@ const SignUp = () => {
                             <Form.Control required onBlur={handleFormValidation} name="confirmPassword" style={{ height: "60px", background: '#F5F5F5' }} type="password" placeholder="Confirm Password" />
                         </Form.Group>
 
-                        <Button style={{ padding: '10px 195px' }} variant="danger" type="submit">
-                            Sign up</Button>
+                        <Button style={{ padding: '10px 195px' }} variant="primary" type="submit">
+                            <b>Sign up</b></Button>
                         <br />
                         <br />
-                        <Link to="/login" style={{ color: '#59C8D9' }}>Already have an Account</Link>
+                        <Link to="/login" style={{ color: 'black' }}> <b>Already have an Account</b> </Link>
                     </Form>
                 </div>
             </div>

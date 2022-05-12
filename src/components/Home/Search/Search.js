@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlinkingCursorTextBuilder, FloatingLettersTextBuilder } from 'react-animated-text-builders'
+import { FloatingLettersTextBuilder } from 'react-animated-text-builders'
 import './Search.css'
 
 const Search = () => {
@@ -7,20 +7,20 @@ const Search = () => {
         <div style={{ marginTop: '68px' }} className="search-container">
             <div style={{ margin: '0 auto', textAlign: 'left' }} className="container">
                 <h1 className="headline text-white">
-                    <BlinkingCursorTextBuilder
+                    {/* <BlinkingCursorTextBuilder
                         floatingSpeed={500}
                         lettersAppearanceDelay={50}
                         textStyle={{ fontWeight: "bold", font: "Times New Roman", fontSize: "18px" }}
-                        style={{ transform: "rotate(-10deg)", marginTop: "5px", marginBottom: "20px" }}
+                        style={{ marginTop: "5px", marginBottom: "20px" }}
                         cursorComponent={<div style={{ color: "#393650" }}> 24/7!!</div>}
-                        blinkTimeAfterFinish={-1}> We are open </BlinkingCursorTextBuilder>
+                        blinkTimeAfterFinish={-1}> We are open </BlinkingCursorTextBuilder> */}
 
-                    <p style={{ color: "#E2F3F9" }}><FloatingLettersTextBuilder
+                    <p style={{ color: "#676E9C" }}><FloatingLettersTextBuilder
                         floatingSpeed={500}
                         lettersAppearanceDelay={50}
                         animationMaxMargin={"200px"}
                         animationMinMargin={"0px"}
-                    > At&nbsp; your&nbsp; Service..Sir!! </FloatingLettersTextBuilder></p>
+                    > We&nbsp; are&nbsp; open&nbsp; 24/7!! </FloatingLettersTextBuilder></p>
                 </h1>
                 {/* <div style={{ position: 'relative' }} className="mt-4">
                     <input className="search-item pl-4" placeholder="Search items..." type="text" />
@@ -28,7 +28,7 @@ const Search = () => {
                 </div> */}
             </div>
 
-        </div>
+        </div >
     );
 };
 

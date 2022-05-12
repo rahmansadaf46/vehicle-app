@@ -213,7 +213,7 @@ const AddGarage = () => {
 
                             <div className="form-group row">
                                 <div className="form-group col-md-12 mt-4 pt-1 d-flex justify-content-center">
-                                    <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn text-white  font-weight-bold">Submit</button>
+                                    <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn text-white btn-primary font-weight-bold">Submit</button>
                                 </div>
                             </div>
 

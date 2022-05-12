@@ -65,6 +65,7 @@ const Menu = () => {
             </div> */}
 
             <div className="container mt-5">
+                <h2 style={{ color: '#85CBD2', fontFamily: "'Macondo', cursive" }} className="text-center mb-5 mt-5"><u>Available Product</u></h2>
                 <div className="row">
                     {
                         item.map(data => <MenuItem item={data}></MenuItem>)

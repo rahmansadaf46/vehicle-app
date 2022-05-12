@@ -1,4 +1,4 @@
-import { faCookieBite } from '@fortawesome/free-solid-svg-icons';
+import { faCookieBite, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,12 @@ const GarageSidebar = () => {
                     </Link>
                 </li>
                 <br />
-
+                <li>
+                    <Link to="/garage/addService" className="">
+                        <span style={{ color: '#59C8D9', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Service</span>
+                    </Link>
+                </li>
+                <br />
 
             </ul>
 

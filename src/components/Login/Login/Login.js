@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import logo from '../../../fakeData/images/logo2.png';
+import logo from '../../../fakeData/images/logo.png';
 import './Login.css';
 import { Button, Form } from 'react-bootstrap';
 import { initializeLoginFramework, signInWithEmailAndPassword } from '../firebase/loginManager';
@@ -123,11 +123,11 @@ const Login = () => {
                         </Form.Group>
 
 
-                        <Button disabled={btn} style={{ padding: '10px 195px' }} variant="danger" type="submit">
-                            Sign in</Button>
+                        <Button disabled={btn} style={{ padding: '10px 195px' }} variant="primary" type="submit">
+                            <b> Sign in</b></Button>
                         <br />
                         <br />
-                        <Link to="/signup" style={{ color: '#59C8D9' }}>Create an Account</Link>
+                        <Link to="/signup" style={{ color: 'black' }}> <b>Create an Account</b> </Link>
                     </Form>
 
                 </div>

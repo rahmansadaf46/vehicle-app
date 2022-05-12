@@ -12,6 +12,8 @@ import Customer from "./components/Admin/Customer/Customer";
 import DeliveryOrder from "./components/Admin/DeliveryOrder/DeliveryOrder";
 import PendingOrder from "./components/Admin/PendingOrder/PendingOrder";
 import Checkout from "./components/Checkout/Checkout/Checkout";
+import Garage from "./components/Garage/Garage/Garage";
+import AddGarageService from "./components/GarageUser/AddGarageService/AddGarageService";
 import PendingRequest from "./components/GarageUser/PendingRequest/PendingRequest";
 import Home from "./components/Home/Home/Home";
 import Item from "./components/Item/Item/Item";
@@ -68,6 +70,13 @@ function App() {
           <Route path="/garage/pending">
             <PendingRequest></PendingRequest>
           </Route>
+          <Route path="/garage/addService">
+            <AddGarageService></AddGarageService>
+          </Route>
+          <Route path="/garage/:id">
+            <Garage></Garage>
+          </Route>
+
           <Route path="/">
             <Home></Home>
           </Route>

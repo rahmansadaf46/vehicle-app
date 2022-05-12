@@ -68,12 +68,16 @@ const Header = ({ cart }) => {
 
                         {loggedInUser.email === "admin@gmail.com" || sessionStorage.getItem('email') === "admin@gmail.com" ? <div className="mr-2">    <Link to='/admin/pending' className="cart "><SupervisorAccountIcon /></Link></div> : <></>}
                         {garageUser.length > 0 && <Link to='/garage/pending' style={{ borderRadius: '30px' }} className="btn mr-3 login"><b>Garage Profile</b></Link>}
-
                         {
-                            cart ? <div className="numberCircle" ><b>{cart}</b></div> : <div></div>
+                            loggedInUser.email || sessionStorage.getItem('token') ?
+                                <> {
+                                    cart ? <div className="numberCircle" ><b>{cart}</b></div> : <div></div>
 
+                                }
+                                    <Link to='/checkout' className="cart"><ShoppingCartIcon /></Link> </>
+                                : <></>
                         }
-                        <Link to='/checkout' className="cart"><ShoppingCartIcon /></Link>
+
 
                         {
                             loggedInUser.email || sessionStorage.getItem('token') ?
