@@ -22,7 +22,7 @@ const AddArea = () => {
 
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/addArea', {
+        fetch('http://localhost:4200/addArea', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title: data.title.toLowerCase(), })

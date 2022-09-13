@@ -12,14 +12,17 @@ import Customer from "./components/Admin/Customer/Customer";
 import DeliveryOrder from "./components/Admin/DeliveryOrder/DeliveryOrder";
 import PendingOrder from "./components/Admin/PendingOrder/PendingOrder";
 import Checkout from "./components/Checkout/Checkout/Checkout";
+import ServiceCheckout from "./components/Checkout/ServiceCheckout/ServiceCheckout";
 import Garage from "./components/Garage/Garage/Garage";
 import AddGarageService from "./components/GarageUser/AddGarageService/AddGarageService";
+import DeliveryRequest from "./components/GarageUser/DeliveryRequest/DeliveryRequest";
 import PendingRequest from "./components/GarageUser/PendingRequest/PendingRequest";
 import Home from "./components/Home/Home/Home";
 import Item from "./components/Item/Item/Item";
 import Login from "./components/Login/Login/Login";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import SignUp from "./components/Login/SignUp/SignUp";
+import ServiceShipment from "./components/ServiceShipment/ServiceShipment/ServiceShipment";
 import Shipment from "./components/Shipment/Shipment/Shipment";
 
 export const UserContext = createContext();
@@ -43,39 +46,49 @@ function App() {
           <PrivateRoute path="/checkout">
             <Checkout></Checkout>
           </PrivateRoute>
-          <Route path="/item/:id">
+          <PrivateRoute path="/serviceCheckout">
+            <ServiceCheckout></ServiceCheckout>
+          </PrivateRoute>
+          <PrivateRoute path="/item/:id">
             <Item></Item>
-          </Route>
-          <Route path="/shipment">
+          </PrivateRoute>
+          
+          <PrivateRoute path="/serviceShipment">
+            <ServiceShipment></ServiceShipment>
+          </PrivateRoute>
+          <PrivateRoute path="/shipment">
             <Shipment></Shipment>
-          </Route>
-          <Route path="/admin/pending">
+          </PrivateRoute>
+          <PrivateRoute path="/admin/pending">
             <PendingOrder></PendingOrder>
-          </Route>
+          </PrivateRoute>
           <Route path="/admin/delivery">
             <DeliveryOrder></DeliveryOrder>
           </Route>
-          <Route path="/admin/addItem">
+          <PrivateRoute path="/admin/addItem">
             <AddItem></AddItem>
-          </Route>
+          </PrivateRoute>
           <Route path="/admin/addArea">
             <AddArea></AddArea>
           </Route>
-          <Route path="/admin/addGarage">
+          <PrivateRoute path="/admin/addGarage">
             <AddGarage></AddGarage>
-          </Route>
-          <Route path="/admin/customer">
+          </PrivateRoute>
+          <PrivateRoute path="/admin/customer">
             <Customer></Customer>
-          </Route>
+          </PrivateRoute>
           <Route path="/garage/pending">
             <PendingRequest></PendingRequest>
+          </Route>
+          <Route path="/garage/delivery">
+            <DeliveryRequest></DeliveryRequest>
           </Route>
           <Route path="/garage/addService">
             <AddGarageService></AddGarageService>
           </Route>
-          <Route path="/garage/:id">
+          <PrivateRoute path="/garage/:id">
             <Garage></Garage>
-          </Route>
+          </PrivateRoute>
 
           <Route path="/">
             <Home></Home>

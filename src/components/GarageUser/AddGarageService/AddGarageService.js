@@ -9,7 +9,7 @@ const AddGarageService = () => {
     const user = sessionStorage.getItem('email');
     useEffect(() => {
         if (user) {
-            fetch('http://localhost:5000/garageUser', {
+            fetch('http://localhost:4200/garageUser', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ user: user })
@@ -23,7 +23,7 @@ const AddGarageService = () => {
     }, [user])
     const onSubmit = data => {
         data.garageId = garageData._id;
-        fetch('http://localhost:5000/addService', {
+        fetch('http://localhost:4200/addService', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ data })

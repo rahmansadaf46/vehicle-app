@@ -35,7 +35,7 @@ const UpdateAmount = ({ modalIsOpen, closeModal, item }) => {
             status: item.finalData.status,
         }
         console.log(finalData)
-        fetch(`http://localhost:5000/updateAmount/${item._id}`, {
+        fetch(`http://localhost:4200/updateAmount/${item._id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(finalData)
@@ -73,7 +73,7 @@ const UpdateAmount = ({ modalIsOpen, closeModal, item }) => {
                         <label className="pt-1 " for=""><b>Amount:</b></label>
                         <input type="text" ref={register({ required: true })} defaultValue={item?.finalData?.amount} name="amount" placeholder="Enter Amount" className="form-control ml-3" />
                         {errors.name && <span className="text-primary">This field is required</span>}
-                        <span className="pt-1  ml-3 font-weight-bold">$</span>
+                        <span className="pt-1  ml-3 font-weight-bold">/-</span>
                     </div>
 
                 </div>

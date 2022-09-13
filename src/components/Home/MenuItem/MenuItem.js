@@ -9,7 +9,7 @@ const MenuItem = ({ item }) => {
             <Link to={`/item/${item._id}`} className="card-item">
                 <Card style={{ width: '20rem', border: 'none' }}>
                     <div className="px-5 py-3">
-                        <Card.Img variant="top" src={`http://localhost:5000/item/${item.image}`} />
+                        <Card.Img variant="top" src={`http://localhost:4200/item/${item.image}`} />
                     </div>
                     <Card.Body>
                         <Card.Title><div style={{ fontSize: '17px' }} className="text-center">
@@ -23,7 +23,7 @@ const MenuItem = ({ item }) => {
 
                         </Card.Text>
                         <div className="text-center">
-                            <h4 style={{ color: 'black' }}>${item.price}</h4>
+                            <h4 style={{ color: 'black' }}>{item.price}/-</h4>
                         </div>
                     </Card.Body>
                 </Card>

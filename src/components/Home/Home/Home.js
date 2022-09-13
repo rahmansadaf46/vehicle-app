@@ -7,10 +7,13 @@ import Menu from '../Menu/Menu';
 import Search from '../Search/Search';
 import { getDatabaseCart } from '../../../utilities/databaseManager';
 import GarageList from '../GarageList/GarageList';
+import Location from '../Location/Location';
 // import fakeData from '../../../fakeData';
 
 const Home = () => {
     const [cart, setCart] = useState([]);
+    const [area, setArea] = useState('');
+    const [location, setLocation] = useState(false);
     const itemData = localStorage.getItem('item')
     useEffect(() => {
         const savedCart = getDatabaseCart();
@@ -22,15 +25,57 @@ const Home = () => {
         })
         setCart(previousCart);
     }, [itemData])
+
+    const handleLocation = () =>{
+        // console.log('Clicked')
+        if(sessionStorage.getItem('email')){
+            openModal()
+        }
+        else{
+            window.location.href='/login'
+        }
+        
+    }
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+    // const [item, setItem] = useState();
+    function openModal() {
+        // setItem(data)
+        setIsOpen(true);
+    }
+
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+    function submitLocation(data) {
+        // setIsOpen(false);
+        console.log(data)
+        if(data.value){
+            setLocation(true)
+            sessionStorage.setItem('location', data.value)
+            window.scroll(0,0)
+            window.location.reload();
+        }
+    }
+    useEffect(() => {
+        if(sessionStorage.getItem('location')){
+            setLocation(true)
+            setArea(sessionStorage.getItem('location'))
+        }
+    },[])
     return (
         <div>
             <Header cart={cart.length}></Header>
-            <Search></Search>
-            <GarageList></GarageList>
+            {location? <GarageList area={area} handleLocation={handleLocation}></GarageList> : <Search handleLocation={handleLocation}></Search>}
+            
+            
 
             <Menu></Menu>
             <About></About>
             <Footer></Footer>
+            <Location modalIsOpen={modalIsOpen} submitLocation={submitLocation}  closeModal={closeModal}></Location>
         </div>
     );
 };

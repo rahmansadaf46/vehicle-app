@@ -8,7 +8,7 @@ const GarageProfile = ({ garage }) => {
             <Link to={`/garage/${garage._id}`} className="card-item">
                 <Card className="garage-item" style={{ borderRadius: '35px', border: 'none', background: '#E2F3F9' }}>
                     <div className="px-5 py-3">
-                        <Card.Img variant="top" src={`http://localhost:5000/garage/${garage.image}`} />
+                        <Card.Img variant="top" src={`http://localhost:4200/garage/${garage.image}`} />
                     </div>
                     <Card.Body>
                         <Card.Title><div style={{ fontSize: '17px' }} className="text-center">

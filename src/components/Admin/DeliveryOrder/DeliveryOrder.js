@@ -17,7 +17,7 @@ const DeliveryOrder = () => {
         }
     }, [email])
     useEffect(() => {
-        fetch('http://localhost:5000/allOrder')
+        fetch('http://localhost:4200/allOrder')
             .then(res => res.json())
             .then(data => {
                 // if (data) {
@@ -72,14 +72,14 @@ const DeliveryOrder = () => {
                                     <div className="col-md-6">
                                         <div className="d-flex justify-content-center">
                                             <div className="text-center " style={{ width: '550px', height: '100%', border: '4px solid #007BFF', borderRadius: '30px', backgroundColor: '#F0FFEF', marginBottom: '25px', padding: '30px' }}>
-                                                <h1 className="text-primary">Today's Income: <span className="text-dark">{formatNumber(todayAmount) || 0}$</span></h1>
+                                                <h1 className="text-primary">Today's Income: <span className="text-dark">{formatNumber(todayAmount) || 0}/-</span></h1>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="d-flex justify-content-center">
                                             <div className="text-center " style={{ width: '550px', height: '100%', border: '4px solid #007BFF', borderRadius: '30px', backgroundColor: '#F0FFEF', marginBottom: '25px', padding: '30px' }}>
-                                                <h1 className="text-primary">Total Income: <span className="text-dark">{formatNumber(amount)}$</span></h1>
+                                                <h1 className="text-primary">Total Income: <span className="text-dark">{formatNumber(amount)}/-</span></h1>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ const DeliveryOrder = () => {
 
                                                 </div>
                                                 <div className="col-md-4 d-flex justify-content-end">
-                                                    <p className="mt-2 font-weight-bold">Amount: <span className="text-primary">{fd.finalData.amount}$</span></p>&nbsp;&nbsp;
+                                                    <p className="mt-2 font-weight-bold">Amount: <span className="text-primary">{fd.finalData.amount}/-</span></p>&nbsp;&nbsp;
                                                 </div>
                                             </div>
                                         </div>

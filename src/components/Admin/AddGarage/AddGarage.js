@@ -37,7 +37,7 @@ const AddGarage = () => {
             localStorage.clear();
             window.location.assign("/");
         }
-        fetch('http://localhost:5000/areas')
+        fetch('http://localhost:4200/areas')
             .then(res => res.json())
             .then(data => {
 
@@ -49,7 +49,7 @@ const AddGarage = () => {
                 console.log(area);
                 setAreaList(area);
             })
-        fetch('http://localhost:5000/users')
+        fetch('http://localhost:4200/users')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -60,7 +60,7 @@ const AddGarage = () => {
                 })
                 setUserList(user);
             })
-        // fetch('http://localhost:5000/garages')
+        // fetch('http://localhost:4200/garages')
         //     .then(res => res.json())
         //     .then(data => {
         //         console.log(data);
@@ -93,7 +93,7 @@ const AddGarage = () => {
         formData.append('facebook', data.facebook);
         formData.append('googleMap', data.googleMap);
         formData.append('status', 'Active');
-        fetch('http://localhost:5000/addGarage', {
+        fetch('http://localhost:4200/addGarage', {
             method: 'POST',
             body: formData
         })

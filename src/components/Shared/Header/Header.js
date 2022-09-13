@@ -25,15 +25,16 @@ const Header = ({ cart }) => {
     const [loggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allOrder')
+        fetch('http://localhost:4200/allOrder')
             .then(res => res.json())
             .then(data => {
                 const email = sessionStorage.getItem('email')
                 const items = data.filter(item => item.finalData.email === email)
+                console.log(items)
                 setItem(items.reverse());
             })
         if (user) {
-            fetch('http://localhost:5000/garageUser', {
+            fetch('http://localhost:4200/garageUser', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ user: user })
@@ -57,7 +58,7 @@ const Header = ({ cart }) => {
     return (
         <div>
             <Navbar fixed="top" className=" bg-white" expand="lg">
-                <Navbar.Brand ><Link to='/'><img style={{ width: '150px', marginLeft: '90px' }} src={logo} alt="" /></Link></Navbar.Brand>
+                <Navbar.Brand ><Link onClick={()=> {sessionStorage.removeItem('location'); window.location.href='/';}} to='/'><img style={{ width: '150px', marginLeft: '90px' }} src={logo} alt="" /></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -113,17 +114,21 @@ const Header = ({ cart }) => {
                                 >
                                     {
                                         item.reverse().map(fd => <div style={{ width: '450px', height: '100%', border: '3px solid brown', backgroundColor: 'lightYellow', marginBottom: '25px', padding: '30px' }}>
-                                            <div className="font-weight-bold mb-4">Order No: <span style={{ color: 'purple' }}>{fd._id.split("").slice(15, 50)}</span></div>
-                                            {fd.finalData.cart.map(item => <p style={{ fontSize: '18px' }}><span className="font-weight-bold text-primary">{item.title}</span> <span className="font-weight-bold text-dark">: {item.quantity}pcs</span></p>)} <br />
+                                            <div className="font-weight-bold mb-4">Order No: <span style={{ color: 'purple' }}>{fd._id.split("").slice(15, 50)}</span><br/><span className='text-dark'>Category:</span> <span className='text-success'>{fd?.finalData.category}</span></div>
+                                           {fd?.finalData.category === "Product" ? <>{fd?.finalData?.cart.map(item => <p style={{ fontSize: '18px' }}><span className="font-weight-bold text-primary">{item.title}</span> <span className="font-weight-bold text-dark">: {item.quantity}pcs</span></p>)} <br /></> : <> 
+                                           <p style={{ fontSize: '18px' }}><span className="font-weight-bold text-danger">{fd?.finalData?.service?.garageName}</span> </p>
+                                           <p style={{ fontSize: '18px' }}><span className="font-weight-bold text-primary">{fd?.finalData?.service?.title}</span> </p>
+                                           </>}
+                                            
                                             <div className="row">
                                                 <div className="col-md-6">
                                                     <p className="mt-2 font-weight-bold">Status: {
-                                                        fd.finalData.status === "Pending" ? <span className="text-primary">{fd.finalData.status}</span> : <span className="text-success">{fd.finalData.status}</span>
+                                                        fd?.finalData?.status === "Pending" ? <span className="text-primary">{fd.finalData.status}</span> : <span className="text-success">{fd.finalData.status}</span>
                                                     } </p>
                                                 </div>
                                                 <div className="col-md-6 d-flex justify-content-end">
 
-                                                    <p className="mt-2 font-weight-bold">Amount: <span className="text-primary">{fd.finalData.amount}$</span></p>
+                                                    <p className="mt-2 font-weight-bold">Amount: <span className="text-primary">{fd.finalData.amount}/-</span></p>
                                                 </div>
                                             </div>
 

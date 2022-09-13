@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 // import map from '../../../fakeData/images/ordercomplete-map.jpg';
-import scooter from '../../../fakeData/images/Image/scooter.png';
-import helmet from '../../../fakeData/images/Image/helmet.png';
-import './Shipment.css';
+import scooter from '../../../fakeData/images/Image/truckgif.gif';
+// import helmet from '../../../fakeData/images/Image/helmet.png';
 import Iframe from 'react-iframe';
+// import './Shipment.css';
 
 
 
-const Shipment = () => {
+const ServiceShipment = () => {
+    const [service, setService] = useState([]);
     const [address, setAddress] = useState([]);
     useEffect(()=>{
-        // setService(JSON.parse(localStorage.getItem('serviceInfo')))
-        setAddress(JSON.parse(sessionStorage.getItem('userProductAddress')))
-        console.log(JSON.parse(sessionStorage.getItem('userProductAddress')))
+        setService(JSON.parse(localStorage.getItem('serviceInfo')))
+        setAddress(JSON.parse(localStorage.getItem('userAddress')))
+        console.log(JSON.parse(localStorage.getItem('userAddress')))
 
     },[])
     return (
@@ -25,19 +26,21 @@ const Shipment = () => {
                     <div className="row">
                         <div className="col-md-7 mr-5">
                         <div className="d-flex justify-content-center ">
-                        <Iframe url="https://maps.google.com/maps?q=Rampura&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        <Iframe url={service[0]?.googleMap}
                             width="650px"
-                            height="580px"
+                            height="570px"
                             id="myId"
                             // className="myClassname"
                             display="initial"
                             position="relative" />
                     </div>
-                        
                         </div>
                         <div className="col-md-4">
                             <div style={{ background: '#E8E8E8', marginLeft: '40px', border: '1px solid white', borderRadius: '20px' }}>
-                                <img style={{ width: "90px", margin: '20px 40px 0px 40px' }} src={scooter} alt="" />
+                                <div className='p-3 text-center text-primary font-weight-bold'>
+                                <span>Your Mechanic is Coming</span>
+                                </div>
+                                <img style={{ width: "150px", margin: '0px 40px 0px 70px' }} src={scooter} alt="" />
 
 
                                 <div style={{ background: 'white', border: '1px solid white', borderRadius: '10px', margin: '15px 15px 0px 15px' }}>
@@ -51,24 +54,24 @@ const Shipment = () => {
                                             <li><br /></li>
                                             <li><br /></li>
                                             <li >
-                                                <b>Shop Address</b>
+                                                <b>Garage Address</b>
                                                 <p style={{ marginBottom: '-5px' }}></p>
-                                                <small>Rampura</small>
+                                                <small>{service[0]?.address}</small>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
 
 
-                                <div style={{ padding: '10px 30px 10px 20px' }}>
-                                    <p style={{ fontSize: '30px', marginBottom: '-8px' }}>09:30</p>
-                                    <small>Estimated delivery time</small>
+                                <div className='p-4 text-center'>
+                                    <p style={{ fontSize: '30px', marginBottom: '-8px' }} className='text-danger'>30 Minutes</p>
+                                    <small>Estimated time</small>
                                 </div>
 
 
                                 <div style={{ background: 'white', border: '1px solid white', borderRadius: '10px', margin: '0px 15px 2px 15px' }}>
                                     <div className=" row">
-                                        <div className="col-md-3">
+                                        {/* <div className="col-md-3">
                                             <img style={{ width: "60px", margin: '10px  ' }} src={helmet} alt="" />
                                         </div>
                                         <div className="col-md-8">
@@ -76,12 +79,12 @@ const Shipment = () => {
                                                 <b>Hamim</b>
                                                 <p style={{ marginBottom: '-5px' }}></p>
                                                 <small>Your rider</small></div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 
                                 <div className="text-center pb-3 p-5">
-                                    <span style={{  }} className="  mt-3"><b>Contact No:</b> 01999999999</span>
+                                    <span style={{  }} className="  mt-3"><b>Contact No:</b> {service[0]?.mobile}</span>
                                 </div>
                             </div>
 
@@ -94,4 +97,4 @@ const Shipment = () => {
     );
 };
 
-export default Shipment;
+export default ServiceShipment;

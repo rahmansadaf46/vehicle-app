@@ -113,7 +113,7 @@ const Login = () => {
                 <div className="mt-5  d-flex justify-content-center">
 
                     <Form onSubmit={handleSubmit} style={{ width: '450px' }}>
-                        <p style={{ fontSize: '20px', color: '#59C8D9' }} ><b>{msg}</b></p>
+                        <p style={{ fontSize: '20px', color: 'red' }} ><b>{msg}</b></p>
                         <Form.Group className="mt-4" controlId="formBasicEmail">
                             <Form.Control onBlur={blur} onChange={handleChange} style={{ height: "60px", background: '#F5F5F5' }} name="email" type="email" placeholder="Email" />
                         </Form.Group>

@@ -11,7 +11,7 @@ const Menu = () => {
     // const [search, setSearch] = useState('');
     const [cart, setCart] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('http://localhost:4200/items')
             .then(res => res.json())
             .then(data => {
                 setItem(data);
@@ -41,31 +41,40 @@ const Menu = () => {
 
 
 
-    // const handleSearch = value => {
-    //     // console.log(value);
-    //     const category = allItem.filter(pd => pd.category === value);
-    //     setItem(category);
-    //     // setSearch(value);
+    const handleSearch = value => {
+        // console.log(value);
+        if(value==='All'){
+            setItem(allItem)
+        }
+        else{
+            const category = allItem.filter(pd => pd.category === value);
+            setItem(category);
+        }
+     
+        // setSearch(value);
 
-    // }
+    }
 
 
 
 
     return (
         <div className="mt-5">
-            {/* <div className="text-center cat">
+            <div className="text-center cat">
+            <h2 style={{ color: '#85CBD2'}} className="text-center mb-5 mt-5"><u>Available Product</u></h2>
                 <nav>
                     <ul>
-                        <li class="menu"><Link onClick={() => handleSearch('breakfast')}><b>Breakfast</b></Link></li>
-                        <li class="menu"><Link onClick={() => handleSearch('lunch')}><b>Lunch</b></Link></li>
-                        <li class="menu"><Link onClick={() => handleSearch('dinner')}><b>Dinner</b></Link></li>
+                    <li class="menu"><Link onClick={() => handleSearch('All')}><b>All Items</b></Link></li>
+                        <li class="menu"><Link onClick={() => handleSearch('Transmission system')}><b>Transmission system</b></Link></li>
+                        <li class="menu"><Link onClick={() => handleSearch('Suspension system')}><b>Suspension system</b></Link></li>
+                        <li class="menu"><Link onClick={() => handleSearch('Tyres and brakes')}><b>Tyres and brakes</b></Link></li>
+                        <li class="menu"><Link onClick={() => handleSearch('Other accessories')}><b>Other accessories</b></Link></li>
                     </ul>
                 </nav>
-            </div> */}
+            </div>
 
             <div className="container mt-5">
-                <h2 style={{ color: '#85CBD2', fontFamily: "'Macondo', cursive" }} className="text-center mb-5 mt-5"><u>Available Product</u></h2>
+                
                 <div className="row">
                     {
                         item.map(data => <MenuItem item={data}></MenuItem>)

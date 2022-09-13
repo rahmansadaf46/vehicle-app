@@ -25,7 +25,7 @@ const CartItem = (props) => {
         <div key={item.id} style={{ background: '#E8E8E8', border: '1px solid white', borderRadius: '30px', marginTop: '10px' }}>
             <div className="row p-2">
                 <div className="col-md-3">
-                    <img width="85px" src={`http://localhost:5000/item/${item.image}`} alt="" />
+                    <img width="85px" src={`http://localhost:4200/item/${item.image}`} alt="" />
                 </div>
                 <div className="col-md-3">
                     <p style={{ fontSize: '13px' }}><b>{item.title}</b></p>

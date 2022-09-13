@@ -192,7 +192,7 @@ const SignUp = () => {
                 name: user.name,
                 email: user.email
             }
-            fetch('http://localhost:5000/addUser', {
+            fetch('http://localhost:4200/addUser', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ person })

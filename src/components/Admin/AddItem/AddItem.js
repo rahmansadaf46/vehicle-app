@@ -8,8 +8,9 @@ const AddItem = () => {
     // const [loading, setLoading] = useState(false);
     // const [dept, setDept] = useState([]);
     // document.title = "Enroll A Student";
+    const [category, setCategory] = useState('Transmission system');
     const email = sessionStorage.getItem('email')
-
+  
     useEffect(() => {
         if (email !== "admin@gmail.com") {
             sessionStorage.clear();
@@ -17,6 +18,10 @@ const AddItem = () => {
             window.location.assign("/");
         }
     }, [email])
+
+    const changeCategory = (data) => {
+        setCategory(data)
+    }
     const [file, setFile] = useState(null);
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
@@ -31,8 +36,8 @@ const AddItem = () => {
         formData.append('price', data.price);
         formData.append('description', data.description);
         formData.append('shortDescription', data.shortDescription);
-
-        fetch('http://localhost:5000/addItem', {
+        formData.append('category', category);
+        fetch('http://localhost:4200/addItem', {
             method: 'POST',
             body: formData
         })
@@ -76,23 +81,7 @@ const AddItem = () => {
                                     <input step="any" style={{ borderRadius: '15px', border: '2px solid #007BFF' }} type="number" ref={register({ required: true })} name="price" placeholder="Price" className="form-control" />
                                     {errors.roll && <span className="text-primary">This field is required</span>}
                                 </div>
-                                {/* <div className="col-md-6 text-primary text-center">
-                                    <label for=""><b>Select Category</b></label>
-
-                                    <select
-                                        style={{ borderRadius: '15px', border: '2px solid #007BFF' }}
-                                        onChange={(event) => changeCategory(event.target.value)}
-                                        className="form-control">
-                                        <option disabled={true} value="Not set">Select</option>
-                                        <option value="breakfast">Breakfast</option>
-                                        <option value="lunch">Lunch</option>
-                                        <option value="dinner">Dinner</option>
-
-
-                                    </select>
-                                    {errors.age && <span className="text-primary">This field is required</span>}
-
-                                </div> */}
+                               
                             </div>
                             <div className="row">
                                 <div className="form-group col-md-12 text-primary text-center">
@@ -114,6 +103,24 @@ const AddItem = () => {
 
                                     <input ref={register({ required: true })} onChange={handleFileChange} className="form" name="image" type="file" />
                                     {errors.file && <span className="text-primary">This field is required</span>}
+
+                                </div>
+                                <div style={{padding:'0px 90px'}} className="col-md-10 text-primary text-center mx-5 ">
+                                    <label for=""><b>Select Category</b></label>
+
+                                    <select
+                                        style={{ borderRadius: '15px', border: '2px solid #007BFF' }}
+                                        onChange={(event) => changeCategory(event.target.value)}
+                                        className="form-control">
+                                        <option disabled={true} value="Not set">Select Category</option>
+                                        <option value="Transmission system">Transmission system</option>
+                                        <option value="Suspension system">Suspension system</option>
+                                        <option value="Tyres and brakes">Tyres and brakes</option>
+                                        <option value="Other accessories">Other accessories</option>
+
+
+                                    </select>
+                                    {errors.age && <span className="text-primary">This field is required</span>}
 
                                 </div>
                                 <div className="form-group col-md-12 mt-4 pt-1 d-flex justify-content-center">

@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
-// import map from '../../../fakeData/images/ordercomplete-map.jpg';
+import map from '../../../fakeData/images/ordercomplete-map.jpg';
 import scooter from '../../../fakeData/images/Image/scooter.png';
 import helmet from '../../../fakeData/images/Image/helmet.png';
-import './Shipment.css';
-import Iframe from 'react-iframe';
+// import './Shipment.css';
 
 
 
-const Shipment = () => {
-    const [address, setAddress] = useState([]);
-    useEffect(()=>{
-        // setService(JSON.parse(localStorage.getItem('serviceInfo')))
-        setAddress(JSON.parse(sessionStorage.getItem('userProductAddress')))
-        console.log(JSON.parse(sessionStorage.getItem('userProductAddress')))
-
-    },[])
+const ServiceShipment = () => {
     return (
         <div>
             <Header></Header>
@@ -24,16 +16,7 @@ const Shipment = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-7 mr-5">
-                        <div className="d-flex justify-content-center ">
-                        <Iframe url="https://maps.google.com/maps?q=Rampura&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                            width="650px"
-                            height="580px"
-                            id="myId"
-                            // className="myClassname"
-                            display="initial"
-                            position="relative" />
-                    </div>
-                        
+                            <img style={{ width: '700px' }} src={map} alt="" />
                         </div>
                         <div className="col-md-4">
                             <div style={{ background: '#E8E8E8', marginLeft: '40px', border: '1px solid white', borderRadius: '20px' }}>
@@ -45,7 +28,7 @@ const Shipment = () => {
                                         <ul >
                                             <li ><b>Your Location</b>
                                                 <p style={{ marginBottom: '-2px' }}></p>
-                                                <li ><small>{address[0]?.area}</small></li>
+                                                <li ><small>107 Rd No 8</small></li>
                                             </li>
                                             <li><br /></li>
                                             <li><br /></li>
@@ -53,7 +36,7 @@ const Shipment = () => {
                                             <li >
                                                 <b>Shop Address</b>
                                                 <p style={{ marginBottom: '-5px' }}></p>
-                                                <small>Rampura</small>
+                                                <small>Gulshan Plaza</small>
                                             </li>
                                         </ul>
                                     </div>
@@ -80,8 +63,8 @@ const Shipment = () => {
                                     </div>
                                 </div>
 
-                                <div className="text-center pb-3 p-5">
-                                    <span style={{  }} className="  mt-3"><b>Contact No:</b> 01999999999</span>
+                                <div className="text-center pb-3">
+                                    <button style={{ padding: '10px 110px' }} className="btn  mt-3">Contact</button>
                                 </div>
                             </div>
 
@@ -94,4 +77,4 @@ const Shipment = () => {
     );
 };
 
-export default Shipment;
+export default ServiceShipment;

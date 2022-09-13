@@ -1,12 +1,14 @@
 import React from 'react';
-import { FloatingLettersTextBuilder } from 'react-animated-text-builders'
+// import { FloatingLettersTextBuilder } from 'react-animated-text-builders'
 import './Search.css'
 
-const Search = () => {
+const Search = ({handleLocation}) => {
     return (
         <div style={{ marginTop: '68px' }} className="search-container">
             <div style={{ margin: '0 auto', textAlign: 'left' }} className="container">
                 <h1 className="headline text-white">
+                    <button onClick={()=> handleLocation()} style={{fontSize:'25px', borderRadius: '50px', margin:'50px 0px 0px 40px',color:'#7E86B4', border:'4px solid #F58E82'}} class="btn btn-light " type="submit"><b>Enter Your Location</b></button>
+                    
                     {/* <BlinkingCursorTextBuilder
                         floatingSpeed={500}
                         lettersAppearanceDelay={50}
@@ -15,12 +17,12 @@ const Search = () => {
                         cursorComponent={<div style={{ color: "#393650" }}> 24/7!!</div>}
                         blinkTimeAfterFinish={-1}> We are open </BlinkingCursorTextBuilder> */}
 
-                    <p style={{ color: "#676E9C" }}><FloatingLettersTextBuilder
+                    {/* <p style={{ color: "#676E9C" }}><FloatingLettersTextBuilder
                         floatingSpeed={500}
                         lettersAppearanceDelay={50}
                         animationMaxMargin={"200px"}
                         animationMinMargin={"0px"}
-                    > We&nbsp; are&nbsp; open&nbsp; 24/7!! </FloatingLettersTextBuilder></p>
+                    > We&nbsp; are&nbsp; open&nbsp; 24/7!! </FloatingLettersTextBuilder></p> */}
                 </h1>
                 {/* <div style={{ position: 'relative' }} className="mt-4">
                     <input className="search-item pl-4" placeholder="Search items..." type="text" />

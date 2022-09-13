@@ -19,7 +19,7 @@ const Garage = () => {
     const itemData = localStorage.getItem('item')
     useEffect(() => {
         // setAllitem(JSON.parse(itemData))
-        fetch('http://localhost:5000/garageProfile/' + id)
+        fetch('http://localhost:4200/garageProfile/' + id)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -28,7 +28,7 @@ const Garage = () => {
                 // localStorage.setItem('item', JSON.stringify(data));
 
             })
-        fetch('http://localhost:5000/service/' + id)
+        fetch('http://localhost:4200/service/' + id)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -92,6 +92,7 @@ const Garage = () => {
     //     }
 
     // };
+    console.log(garage.facebook);
     return (
         <div>
             <Header cart={cart.length}></Header>
@@ -107,18 +108,23 @@ const Garage = () => {
 
                             {/* <button onClick={() => handleAddProduct(item)} style={{ backgroundColor: '#59C8D9', color: 'white', borderRadius: '30px', height: '40px' }} className="btn  px-4 mt-3"><ShoppingCartIcon className="mr-2" /> Add</button> */}
                             {/* <div className="row mt-4">
-                            <img width="200px" className="mx-4" src={`http://localhost:5000/item/${item.image}`} alt="" />
-                            <img width="200px" className="mx-2" src={`http://localhost:5000/item/${item.image}`} alt="" />
+                            <img width="200px" className="mx-4" src={`http://localhost:4200/item/${item.image}`} alt="" />
+                            <img width="200px" className="mx-2" src={`http://localhost:4200/item/${item.image}`} alt="" />
                         </div> */}
                         </div>
                         <div className="col-md-6 text-left">
-                            <img style={{ width: '450px', borderRadius: '50%' }} src={`http://localhost:5000/garage/${garage.image}`} alt="" />
+                            <img style={{ width: '450px', borderRadius: '50%' }} src={`http://localhost:4200/garage/${garage.image}`} alt="" />
                         </div>
                     </div>
                     <div >
                         <h1 style={{ color: '#676E9C' }} className="text-center mt-5"><u>Available Services</u></h1>
                         <div className="row d-flex justify-content-center">{services?.map(service =>
-                            <div style={{ backgroundColor: '#f5fffa', borderRadius: '40px', cursor: 'pointer' }} className="col-7 garage mx-4 my-4 pb-3">
+                            <div onClick={()=>{
+                                garage.service = service;
+                                localStorage.setItem('serviceInfo',JSON.stringify([garage]) )
+                                console.log(garage)
+                                window.location.href='/serviceCheckout';
+                                }} style={{ backgroundColor: '#f5fffa', borderRadius: '40px', cursor: 'pointer' }} className="col-7 garage mx-4 my-4 pb-3">
                                 <div > <div ><h3 className="text-center text-warning my-3">{service.title}</h3>
                                     <p style={{ lineHeight: '0.3', color: 'gray', fontWeight: 'bold', marginBottom: '30px' }}>{service.description.split('\n').map(str => <p>{str}</p>)}</p>
                                     <hr />
