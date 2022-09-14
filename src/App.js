@@ -8,15 +8,22 @@ import './App.css';
 import AddArea from "./components/Admin/AddArea/AddArea";
 import AddGarage from "./components/Admin/AddGarage/AddGarage";
 import AddItem from "./components/Admin/AddItem/AddItem";
+import AreaList from "./components/Admin/AreaList/AreaList";
 import Customer from "./components/Admin/Customer/Customer";
 import DeliveryOrder from "./components/Admin/DeliveryOrder/DeliveryOrder";
+import GarageListAdmin from "./components/Admin/GarageListAdmin/GarageListAdmin";
+import ItemList from "./components/Admin/ItemList/ItemList";
 import PendingOrder from "./components/Admin/PendingOrder/PendingOrder";
 import Checkout from "./components/Checkout/Checkout/Checkout";
 import ServiceCheckout from "./components/Checkout/ServiceCheckout/ServiceCheckout";
 import Garage from "./components/Garage/Garage/Garage";
 import AddGarageService from "./components/GarageUser/AddGarageService/AddGarageService";
 import DeliveryRequest from "./components/GarageUser/DeliveryRequest/DeliveryRequest";
+import GarageProfileUser from "./components/GarageUser/GarageProfileUser/GarageProfileUser";
 import PendingRequest from "./components/GarageUser/PendingRequest/PendingRequest";
+import ServiceList from "./components/GarageUser/ServiceList/ServiceList";
+import UpdateGarageService from "./components/GarageUser/UpdateGarageService/UpdateGarageService";
+// import GarageList from "./components/Home/GarageList/GarageList";
 import Home from "./components/Home/Home/Home";
 import Item from "./components/Item/Item/Item";
 import Login from "./components/Login/Login/Login";
@@ -62,11 +69,17 @@ function App() {
           <PrivateRoute path="/admin/pending">
             <PendingOrder></PendingOrder>
           </PrivateRoute>
-          <Route path="/admin/delivery">
+          <PrivateRoute path="/admin/delivery">
             <DeliveryOrder></DeliveryOrder>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/admin/areaList">
+            <AreaList></AreaList>
+          </PrivateRoute>
           <PrivateRoute path="/admin/addItem">
             <AddItem></AddItem>
+          </PrivateRoute>
+          <PrivateRoute path="/admin/itemList">
+            <ItemList></ItemList>
           </PrivateRoute>
           <Route path="/admin/addArea">
             <AddArea></AddArea>
@@ -74,18 +87,30 @@ function App() {
           <PrivateRoute path="/admin/addGarage">
             <AddGarage></AddGarage>
           </PrivateRoute>
+          <PrivateRoute path="/admin/garageList">
+            <GarageListAdmin></GarageListAdmin>
+          </PrivateRoute>
           <PrivateRoute path="/admin/customer">
             <Customer></Customer>
           </PrivateRoute>
-          <Route path="/garage/pending">
+          <PrivateRoute path="/garage/profile">
+            <GarageProfileUser></GarageProfileUser>
+          </PrivateRoute>
+          <PrivateRoute path="/garage/pending">
             <PendingRequest></PendingRequest>
-          </Route>
-          <Route path="/garage/delivery">
+          </PrivateRoute>
+          <PrivateRoute path="/garage/delivery">
             <DeliveryRequest></DeliveryRequest>
-          </Route>
-          <Route path="/garage/addService">
+          </PrivateRoute>
+          <PrivateRoute path="/garage/addService">
             <AddGarageService></AddGarageService>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/garage/updateService/:id">
+            <UpdateGarageService></UpdateGarageService>
+          </PrivateRoute>
+          <PrivateRoute path="/garage/serviceList">
+            <ServiceList></ServiceList>
+          </PrivateRoute>
           <PrivateRoute path="/garage/:id">
             <Garage></Garage>
           </PrivateRoute>

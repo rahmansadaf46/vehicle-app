@@ -60,8 +60,7 @@ const DeliveryOrder = () => {
                 <div className="col-md-2">
                     <AdminSidebar />
                 </div>
-                {
-                    product.length === 0 ? <div style={{ backgroundColor: '#B3E1E4', height: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center"><h2 className="text-primary">Loading...</h2></div> : <div style={{ backgroundColor: '#B3E1E4', height: '100%', minHeight: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center">
+                <div style={{ backgroundColor: '#B3E1E4', height: '100%', minHeight: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center">
                         <div className="">
 
                             <div>
@@ -117,7 +116,6 @@ const DeliveryOrder = () => {
                                 }</div>
                         </div>
                     </div>
-                }
             </div>
 
         </div>

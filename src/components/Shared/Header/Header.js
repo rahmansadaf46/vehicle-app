@@ -43,6 +43,7 @@ const Header = ({ cart }) => {
                 .then(data => {
                     console.log(data);
                     setGarageUser(data);
+                    sessionStorage.setItem('garageUser', JSON.stringify(data))
                     // const email = sessionStorage.getItem('email')
                     // const items = data.filter(item => item.finalData.email === email)
                     // setItem(items.reverse());
@@ -68,7 +69,7 @@ const Header = ({ cart }) => {
                     <Form inline>
 
                         {loggedInUser.email === "admin@gmail.com" || sessionStorage.getItem('email') === "admin@gmail.com" ? <div className="mr-2">    <Link to='/admin/pending' className="cart "><SupervisorAccountIcon /></Link></div> : <></>}
-                        {garageUser.length > 0 && <Link to='/garage/pending' style={{ borderRadius: '30px' }} className="btn mr-3 login"><b>Garage Profile</b></Link>}
+                        {garageUser.length > 0 && <Link to='/garage/profile' style={{ borderRadius: '30px' }} className="btn mr-3 login"><b>Garage Profile</b></Link>}
                         {
                             loggedInUser.email || sessionStorage.getItem('token') ?
                                 <> {

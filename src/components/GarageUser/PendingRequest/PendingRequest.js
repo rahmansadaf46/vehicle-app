@@ -64,8 +64,7 @@ const PendingRequest = () => {
                 </div>
 
                
-                {
-                    product.length === 0 ? <div style={{ backgroundColor: '#B3E1E4', height: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center"><h2 className="text-primary">Loading...</h2></div> : <div style={{ backgroundColor: '#B3E1E4', height: '100%', minHeight: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center">
+                <div style={{ backgroundColor: '#B3E1E4', height: '100%', minHeight: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center">
                         <div className="">
                             <div className="text-center pb-3 text-primary">
                                 <h2><u>Pending Request</u></h2>
@@ -81,7 +80,7 @@ const PendingRequest = () => {
                                 <p style={{ fontSize: '18px' }}><span className="font-weight-bold text-primary">Payment ID: </span><span className="font-weight-bold text-dark">{fd.finalData.paymentData}</span> </p>
                                 <br />
                                 <div style={{ border: '2px solid #007BFF', padding: '15px' }}>
-                                    <p className="font-weight-bold ">Address: <span className="text-primary">Flat No {fd.finalData.address.flatNo}, House No {fd.finalData.address.houseNo}, {fd.finalData.address.area}</span></p>
+                                    <p className="font-weight-bold ">Address: <span className="text-primary"> {fd.finalData.address.area}</span></p>
                                     <p className="font-weight-bold">Contact: <span className="text-primary">{fd.finalData.address.contactNo}</span></p>
                                     <p className="font-weight-bold text-dark">Email: <span className="text-primary">{fd.finalData.email}</span></p>
                                 </div>
@@ -89,7 +88,7 @@ const PendingRequest = () => {
                                 <div className="row">
                                     <div className="d-flex col-md-6">
                                         <div className="">
-                                            <p className="mt-2 font-weight-bold">Status: <span className="text-primary">{fd.finalData.status}</span> </p></div>
+                                            <p className="mt-2 font-weight-bold">Status: <span className="text-danger">{fd.finalData.status}</span> </p></div>
                                         <div style={{ position: 'relative', left: '10px', top: '7px' }} >
                                             <label class="switch">
                                                 <input onChange={() => handleChange(fd)} type="checkbox" />
@@ -107,7 +106,6 @@ const PendingRequest = () => {
                             }</div>
                         </div>
                     </div>
-                }
 
             </div>
 

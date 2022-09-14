@@ -77,8 +77,7 @@ const PendingOrder = () => {
                     <AdminSidebar />
                 </div>
 
-                {
-                    product.length === 0 ? <div style={{ backgroundColor: '#B3E1E4', height: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center"><h2 className="text-primary">Loading...</h2></div> : <div style={{ backgroundColor: '#B3E1E4', height: '100%', minHeight: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center">
+                <div style={{ backgroundColor: '#B3E1E4', height: '100%', minHeight: '800px' }} className="col-md-10 pt-4 d-flex justify-content-center">
                         <div className="">
                             <div className="text-center pb-3 text-primary">
                                 <h2><u>Pending Order</u></h2>
@@ -119,7 +118,6 @@ const PendingOrder = () => {
                             }</div>
                         </div>
                     </div>
-                }
 
             </div>
 

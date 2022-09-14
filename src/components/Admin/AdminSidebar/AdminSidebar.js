@@ -1,4 +1,4 @@
-import { faPlus, faCookieBite, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faCookieBite, faCheckCircle, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -27,14 +27,32 @@ const AdminSidebar = () => {
                 </li>
                 <br />
                 <li>
+                    <Link to="/admin/itemList" className="">
+                        <span style={{  fontWeight: 'bold' }}><FontAwesomeIcon icon={faBars} /> Item List</span>
+                    </Link>
+                </li>
+                <br />
+                <li>
                     <Link to="/admin/addArea" className="">
                         <span style={{  fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Area</span>
                     </Link>
                 </li>
                 <br />
                 <li>
+                    <Link to="/admin/areaList" className="">
+                        <span style={{  fontWeight: 'bold' }}><FontAwesomeIcon icon={faBars} /> Area List</span>
+                    </Link>
+                </li>
+                <br />
+                <li>
                     <Link to="/admin/addGarage" className="">
                         <span style={{  fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Garage</span>
+                    </Link>
+                </li>
+                <br />
+                <li>
+                    <Link to="/admin/garageList" className="">
+                        <span style={{  fontWeight: 'bold' }}><FontAwesomeIcon icon={faBars} /> Garage List</span>
                     </Link>
                 </li>
                 <br />
