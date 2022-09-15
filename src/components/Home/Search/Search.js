@@ -7,7 +7,11 @@ const Search = ({handleLocation}) => {
         <div style={{ marginTop: '68px' }} className="search-container">
             <div style={{ margin: '0 auto', textAlign: 'left' }} className="container">
                 <h1 className="headline text-white">
-                    <button onClick={()=> handleLocation()} style={{fontSize:'25px', borderRadius: '50px', margin:'50px 0px 0px 40px',color:'#7E86B4', border:'4px solid #F58E82'}} class="btn btn-light " type="submit"><b>Enter Your Location</b></button>
+                    <div>
+                    <h1>Welcome to Trust & Ride</h1>
+                    {/* <h2>Ride</h2> */}
+                    </div>
+                    <button onClick={()=> handleLocation()} style={{fontSize:'25px', borderRadius: '50px', margin:'50px 0px 0px 0px',color:'#7E86B4', border:'4px solid #F58E82'}} class="btn btn-light " type="submit"><b>Enter Your Location</b></button>
                     
                     {/* <BlinkingCursorTextBuilder
                         floatingSpeed={500}
